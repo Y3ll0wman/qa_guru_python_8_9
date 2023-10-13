@@ -1,4 +1,5 @@
 import allure
+from allure_commons.types import Severity
 from selene import browser, be, by, have
 
 
@@ -13,6 +14,13 @@ def test_issue_name_selene():
 
 
 def test_issue_name_allure_dynamic_steps():
+    allure.dynamic.tag('web')
+    allure.dynamic.severity(Severity.NORMAL)
+    allure.dynamic.label('owner', 'Y3ll0wman')
+    allure.dynamic.feature('Задачи в репозитории')
+    allure.dynamic.story('Название задачи отображается не зарегистрированному пользователю')
+    allure.dynamic.link('https://github.com/', name='Testing')
+
     with allure.step("Открыть github.com"):
         browser.open('https://github.com/')
     with allure.step("Нажать на поисковую строку"):
