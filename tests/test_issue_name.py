@@ -12,7 +12,7 @@ def test_issue_name_selene():
     browser.element('.gh-header-title').should(have.text('Issue_created_to_test_allure_reports'))
 
 
-def test_issue_name_allure_steps():
+def test_issue_name_allure_dynamic_steps():
     with allure.step("Открыть github.com"):
         browser.open('https://github.com/')
     with allure.step("Нажать на поисковую строку"):
