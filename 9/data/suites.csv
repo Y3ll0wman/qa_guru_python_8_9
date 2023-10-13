@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"broken","Fri Oct 13 23:44:46 GMT 2023","Fri Oct 13 23:44:47 GMT 2023","850","tests","test_issue_name","","","","test_issue_name_allure_decorator_steps",""
+"broken","Fri Oct 13 23:44:41 GMT 2023","Fri Oct 13 23:44:44 GMT 2023","2047","tests","test_issue_name","","","","test_issue_name_selene",""
+"broken","Fri Oct 13 23:44:45 GMT 2023","Fri Oct 13 23:44:45 GMT 2023","854","tests","test_issue_name","","","","test_issue_name_allure_dynamic_steps",""
