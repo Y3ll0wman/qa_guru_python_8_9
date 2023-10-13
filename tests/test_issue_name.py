@@ -4,7 +4,7 @@ from selene import browser, be, by, have
 
 
 def test_issue_name_selene():
-    browser.open('https://github.com/')
+    browser.open('/')
     browser.element('.search-input').should(be.visible).click()
     browser.element('#query-builder-test').should(be.visible).type('eroshenkoam/allure-example').press_enter()
     browser.element(by.link_text('eroshenkoam/allure-example')).should(be.visible).click()
@@ -22,7 +22,7 @@ def test_issue_name_allure_dynamic_steps():
     allure.dynamic.link('https://github.com/', name='Testing')
 
     with allure.step("Открыть github.com"):
-        browser.open('https://github.com/')
+        browser.open('/')
     with allure.step("Нажать на поисковую строку"):
         browser.element('.search-input').should(be.visible).click()
     with allure.step("Ввести 'eroshenkoam/allure-example' и нажать Enter"):
@@ -55,7 +55,7 @@ def test_issue_name_allure_decorator_steps():
 
 @allure.step("Открыть github.com")
 def open_github():
-    browser.open('https://github.com/')
+    browser.open('/')
 
 
 @allure.step("Нажать на поисковую строку")
