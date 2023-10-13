@@ -36,3 +36,53 @@ def test_issue_name_allure_dynamic_steps():
     with allure.step("Проверить, что заголовок содержит текст 'Issue_created_to_test_allure_reports'"):
         browser.element('.gh-header-title').should(have.text('Issue_created_to_test_allure_reports'))
 
+
+@allure.tag('web')
+@allure.severity(Severity.NORMAL)
+@allure.label('owner', 'Y3ll0wman')
+@allure.feature('Задачи в репозитории')
+@allure.story('Название задачи отображается не зарегистрированному пользователю')
+@allure.link('https://github.com/', name='Testing')
+def test_issue_name_allure_decorator_steps():
+    open_github()
+    click_on_the_search_input()
+    type_search_request()
+    click_on_the_title_in_search_results()
+    click_on_issues_tab()
+    click_on_the_title_issue()
+    check_title_text()
+
+
+@allure.step("Открыть github.com")
+def open_github():
+    browser.open('https://github.com/')
+
+
+@allure.step("Нажать на поисковую строку")
+def click_on_the_search_input():
+    browser.element('.search-input').should(be.visible).click()
+
+
+@allure.step("Ввести 'eroshenkoam/allure-example' и нажать Enter")
+def type_search_request():
+    browser.element('#query-builder-test').should(be.visible).type('eroshenkoam/allure-example').press_enter()
+
+
+@allure.step("Нажать на ссылку содержащую текст 'eroshenkoam/allure-example'")
+def click_on_the_title_in_search_results():
+    browser.element(by.link_text('eroshenkoam/allure-example')).should(be.visible).click()
+
+
+@allure.step("Кликнуть на Issues-tab")
+def click_on_issues_tab():
+    browser.element('#issues-tab').should(be.visible).click()
+
+
+@allure.step("Нажать на ссылку содержащую текст 'Issue_created_to_test_allure_reports'")
+def click_on_the_title_issue():
+    browser.element(by.link_text('Issue_created_to_test_allure_reports')).should(be.visible).click()
+
+
+@allure.step("Проверить, что заголовок содержит текст 'Issue_created_to_test_allure_reports'")
+def check_title_text():
+    browser.element('.gh-header-title').should(have.text('Issue_created_to_test_allure_reports'))
