@@ -1,6 +1,7 @@
 import allure
-from allure_commons.types import Severity
 from selene import browser, be, by, have
+from allure_commons.types import Severity
+
 
 
 def test_issue_name_selene():
