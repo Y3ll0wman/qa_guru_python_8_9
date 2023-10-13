@@ -3,7 +3,6 @@ from selene import browser, be, by, have
 from allure_commons.types import Severity
 
 
-
 def test_issue_name_selene():
     browser.open('/')
     browser.element('.search-input').should(be.visible).click()
