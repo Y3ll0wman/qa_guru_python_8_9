@@ -22,7 +22,7 @@ jobs:
         with:
           python-version: '3.x'
       - name: Install Chrome
-        run: sudo apt-get install google chrome stable
+        run: sudo dpkg -i google-chrome-stable_current_amd64.deb
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
