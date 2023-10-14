@@ -1,6 +1,5 @@
 import pytest
 
-# from selene.support.shared import config
 from selenium import webdriver
 from selene import browser
 
@@ -13,11 +12,6 @@ def browser_management():
     options.add_argument('--disable-gpu')
     options.add_argument('--headless')
 
-    # config.driver_options = options
-    # config.base_url = 'https://github.com/'
-    # config.window_width = 1310
-    # config.window_height = 1410
-    # config.timeout = 15
     browser.config.driver_options = options
     browser.config.base_url = 'https://github.com/'
     browser.config.window_width = 1310
