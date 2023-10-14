@@ -1,7 +1,7 @@
 import pytest
 
-from selenium import webdriver
 from selene.support.shared import config
+from selenium import webdriver
 
 
 @pytest.fixture(scope='function', autouse=True)
@@ -17,4 +17,3 @@ def browser_management():
     config.window_width = 1310
     config.window_height = 1410
     config.timeout = 15
-    options.driver_name = 'chrome'
