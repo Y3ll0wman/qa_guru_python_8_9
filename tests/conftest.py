@@ -10,7 +10,6 @@ def browser_management():
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
     options.add_argument('--disable-gpu')
-    options.browser_version = '2.37'
     options.add_argument('--headless')
 
     config.driver_options = options
