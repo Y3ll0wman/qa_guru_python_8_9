@@ -13,6 +13,7 @@ def browser_management():
     options.browser_version = '2.37'
     options.add_argument('--headless')
 
+    config.driver_options = options
     config.base_url = 'https://github.com/'
     config.window_width = 1310
     config.window_height = 1410
